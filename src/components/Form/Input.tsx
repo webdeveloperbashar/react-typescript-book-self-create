@@ -1,10 +1,19 @@
-import React from "react";
+import React from 'react';
 
-const Input = () => {
+interface IProps {
+  label?: string;
+  type: string;
+  name: string;
+  className: string;
+  value?: string;
+}
+
+const Input: React.FC<IProps> = ({ label, type, name, className, value }) => {
   return (
-    <div>
-      <h3>Bashar</h3>
-    </div>
+    <>
+      <label htmlFor={label}>{label}</label>
+      <input type={type} name={name} className={className} value={value} />
+    </>
   );
 };
 

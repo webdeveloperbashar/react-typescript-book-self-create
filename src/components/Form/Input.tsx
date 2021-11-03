@@ -1,12 +1,11 @@
 import React from "react";
 
-
-const App = () => {
+const Input = () => {
   return (
-    <div className="App">
+    <div>
       <h3>Bashar</h3>
     </div>
   );
-}
+};
 
-export default App;
+export default Input;

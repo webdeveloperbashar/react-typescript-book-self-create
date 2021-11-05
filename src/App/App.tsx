@@ -1,10 +1,10 @@
 import React from 'react';
-import Routes from './Routes';
+import Home from '../Pages/Home';
 
 const App = () => {
   return (
     <>
-      <Routes />
+    <Home/>
     </>
   );
 };

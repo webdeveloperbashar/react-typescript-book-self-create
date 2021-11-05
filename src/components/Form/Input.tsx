@@ -6,13 +6,35 @@ interface IProps {
   name: string;
   className: string;
   value?: string;
+  autoComplete?: string;
+  required?: boolean;
+  placeholder?: string;
 }
 
-const Input: React.FC<IProps> = ({ label, type, name, className, value }) => {
+const Input = ({
+  label,
+  type,
+  name,
+  className,
+  value,
+  autoComplete,
+  required,
+  placeholder,
+}: IProps) => {
   return (
     <>
-      <label htmlFor={label}>{label}</label>
-      <input type={type} name={name} className={className} value={value} />
+      <div className="w-full">
+        <label htmlFor={label}>{label}</label>
+        <input
+          name={name}
+          type={type}
+          autoComplete={autoComplete}
+          required={required}
+          className={className}
+          value={value}
+          placeholder={placeholder}
+        />
+      </div>
     </>
   );
 };

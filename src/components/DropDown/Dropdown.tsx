@@ -1,58 +1,17 @@
+/* eslint-disable no-undef */
 /* This example requires Tailwind CSS v2.0+ */
 import React, { Fragment } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
-
-const people = [
-  {
-    id: 1,
-    name: 'Home',
-    avatar:
-      'https://media.gettyimages.com/photos/house-orange-isolated-home-simple-picture-id1273742730',
-  },
-  {
-    id: 2,
-    name: 'Personal',
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROPzc1fJ5tqedpl8z80RlXK9vP2a0PULoeNg&usqp=CAU',
-  },
-  {
-    id: 3,
-    name: 'LMS',
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB1S1lcjT-FINwhQj_5EhN0iAnJEX0RDYsIA&usqp=CAU',
-  },
-  {
-    id: 4,
-    name: 'Office',
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Bgpt9JZZuR5uOoSYKEMDt_U6h-qigPk8TA&usqp=CAU',
-  },
-  {
-    id: 5,
-    name: 'Development',
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE2Z1j1Rv19rRWIBfe1SCbN7O1qaag1YYJoA&usqp=CAU',
-  },
-  {
-    id: 6,
-    name: 'Programming',
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDokuXblcLv7T9J7LnxynN6S6MPxBrtRScpg&usqp=CAU',
-  },
-];
+import { dropdownMenuItem } from '../../utils/FakeData/dropdownMenuItem';
+import { IPeopleState } from 'module-types';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
-interface IState {
-    id: number,
-    name: string,
-    avatar: string,
-}
 interface IProps {
-    selected: IState,
-    setSelected: (dispatch: IState) => void
+    selected: IPeopleState,
+    setSelected: (dispatch: IPeopleState) => void
 }
 const Dropdown = ({selected, setSelected}: IProps) => {
 //   const [selected, setSelected] = useState<IState>(people[3]);
@@ -88,7 +47,7 @@ const Dropdown = ({selected, setSelected}: IProps) => {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                {people.map((person) => (
+                {dropdownMenuItem.map((person) => (
                   <Listbox.Option
                     key={person.id}
                     className={({ active }) =>

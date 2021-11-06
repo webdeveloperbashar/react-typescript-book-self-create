@@ -1,18 +1,15 @@
+/* eslint-disable no-undef */
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/solid';
+import { IDataState, IPeopleState } from 'module-types';
 import { ChangeEvent, useState } from 'react';
 import Button from '../components/Button/Button';
 import Modal from '../components/Form/Modal';
-import { people } from '../utils/FakeData/people';
+import { dropdownMenuItem } from '../utils/FakeData/dropdownMenuItem';
 
-export interface IState {
-  id: number;
-  name: string;
-  avatar: string;
-}
 const Home = () => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState<IState>({} as IState);
-  const [data, setData] = useState<IState[]>([]);
+  const [value, setValue] = useState<IDataState>({} as IDataState);
+  const [data, setData] = useState<IDataState[]>([]);
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setValue({
       ...value,
@@ -21,9 +18,8 @@ const Home = () => {
   };
   const handleTodoCreate = (): void => {
     setData([...data, value]);
-    console.log(data);
   };
-  const [selected, setSelected] = useState<IState>(people[3]);
+  const [selected, setSelected] = useState<IPeopleState>(dropdownMenuItem[3]);
   return (
     <>
       <Modal
@@ -47,22 +43,7 @@ const Home = () => {
               Today
             </h2>
           </div>
-          {/* <form action="#" method="POST">
-            <div className="rounded-md flex bg-white justify-between align-middle">
-              <Input
-                type="text"
-                name="todo"
-                className="appearance-none relative shadow-lg block w-full py-3 px-2 border-none placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                autoComplete="off"
-                required={true}
-                onChange={handleChange}
-                placeholder="Add new todo"
-              />
-            </div>
-            <div className="rounded-md bg-white mt-4">
-              <Dropdown selected={selected} setSelected={setSelected} />
-            </div>
-          </form> */}
+
           <div
             className="p-2 shadow-lg rounded-lg bg-white flex items-center justify-between"
             style={{ marginTop: '10px', padding: '10px 10px' }}

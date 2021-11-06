@@ -2,15 +2,15 @@ import { ChangeEvent, Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import Input from './Input';
 import Dropdown from '../DropDown/Dropdown';
-import { IState } from '../../Pages/Home';
+import { IPeopleState } from 'module-types';
 
 type Iprops = {
   modalOpen: boolean;
   modalSetOpen: (Boolean: boolean) => void;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleTodoCreate: () => void;
-  selected: IState;
-  setSelected: (dispatch: IState) => void;
+  selected: IPeopleState;
+  setSelected: (dispatch: IPeopleState) => void;
 };
 
 const Modal = ({

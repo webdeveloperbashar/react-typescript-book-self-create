@@ -1,4 +1,4 @@
-export const people = [
+export const dropdownMenuItem = [
   {
     id: 1,
     name: 'Home',

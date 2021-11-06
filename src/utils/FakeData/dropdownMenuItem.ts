@@ -13,7 +13,7 @@ export const dropdownMenuItem = [
   },
   {
     id: 3,
-    name: 'LMS',
+    name: 'Study',
     avatar:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB1S1lcjT-FINwhQj_5EhN0iAnJEX0RDYsIA&usqp=CAU',
   },
@@ -25,9 +25,9 @@ export const dropdownMenuItem = [
   },
   {
     id: 5,
-    name: 'Development',
+    name: 'Entertainment',
     avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE2Z1j1Rv19rRWIBfe1SCbN7O1qaag1YYJoA&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLwFB1Icf3Nm--EnAEF0N8_aBCxFcE0kxYZg&usqp=CAU',
   },
   {
     id: 6,

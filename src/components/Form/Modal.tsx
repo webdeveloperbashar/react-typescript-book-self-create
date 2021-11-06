@@ -2,15 +2,12 @@ import { ChangeEvent, Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import Input from './Input';
 import Dropdown from '../DropDown/Dropdown';
-import { IPeopleState } from 'module-types';
 
 type Iprops = {
   modalOpen: boolean;
   modalSetOpen: (Boolean: boolean) => void;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
   handleTodoCreate: () => void;
-  selected: IPeopleState;
-  setSelected: (dispatch: IPeopleState) => void;
 };
 
 const Modal = ({
@@ -18,8 +15,6 @@ const Modal = ({
   modalSetOpen,
   handleChange,
   handleTodoCreate,
-  selected,
-  setSelected
 }: Iprops) => {
   const cancelButtonRef = useRef(null);
   const handleCreate = (): void => {
@@ -78,10 +73,12 @@ const Modal = ({
                       />
                     </div>
                     <div className="rounded-md bg-white mt-10">
-                      <label htmlFor="project" className="text-gray-500">
-                        Project Type
-                      </label>
-                      <Dropdown selected={selected} setSelected={setSelected} />
+                      <Dropdown
+                        label="Project Type"
+                        name="projectType"
+                        className="appearance-none mt-2 relative border-2 block w-full py-3 px-2 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="rounded-md bg-white text-gray-500 mt-10">
                       <Input

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 interface IProps {
   label?: string;
@@ -8,6 +8,7 @@ interface IProps {
   value?: string;
   autoComplete?: string;
   required?: boolean;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
 }
 
@@ -19,6 +20,7 @@ const Input = ({
   value,
   autoComplete,
   required,
+  onChange,
   placeholder,
 }: IProps) => {
   return (
@@ -32,6 +34,7 @@ const Input = ({
           required={required}
           className={className}
           value={value}
+          onChange={onChange}
           placeholder={placeholder}
         />
       </div>

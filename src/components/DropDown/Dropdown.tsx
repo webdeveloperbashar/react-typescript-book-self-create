@@ -24,7 +24,7 @@ const Dropdown = ({ label, name, onChange, className, value }: IProps) => {
       >
         {dropdownMenuItem.map((item) => (
           <option value={item.name} key={item.id}>
-            {item.name}
+              {item.name}
           </option>
         ))}
       </select>

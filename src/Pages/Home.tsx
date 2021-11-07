@@ -48,7 +48,7 @@ const Home = () => {
             </h2>
           </div>
 
-          <div className="overflow-x-hidden overscroll-y-auto">
+          <div style={{height: '497px'}} className="overflow-x-hidden overscroll-y-auto">
             {data.length > 0 ? (
               data.map((item, index) => (
                 <div
@@ -56,7 +56,6 @@ const Home = () => {
                   style={{ marginTop: '10px', padding: '10px 10px' }}
                   key={index + 1}
                 >
-                  {JSON.stringify(item.projectType)}
                   <div className="flex items-start">
                     <input
                       id={item.todo}
@@ -72,7 +71,7 @@ const Home = () => {
                       >
                         <h2 className="text-lg font-bold">{item.todo}</h2>
                       </label>
-                      <div>
+                      <div className="text-purple-500 text-sm">
                         <p>{item.projectType}</p>
                       </div>
                       <div className="text-gray-500 text-sm">
